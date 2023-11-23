@@ -5,7 +5,6 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app)
 
-# Verifica se o arquivo existe, senão cria o arquivo com o cabeçalho
 try:
     with open('Text.csv', 'x') as arquivo:
         arquivo.write("ID,TAREFA\n")
