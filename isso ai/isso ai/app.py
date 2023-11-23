@@ -6,16 +6,16 @@ app = Flask(__name__)
 CORS(app)
 
 try:
-    with open('Text.csv', 'x') as arquivo:
+    with open('index.js', 'x') as arquivo:
         arquivo.write("ID,TAREFA\n")
 except FileExistsError:
     pass
 
 def carregar_tarefas():
-    return pd.read_csv('Text.csv')
+    return pd.read_csv('index.js')
 
 def salvar_tarefas(tarefas):
-    tarefas.to_csv('Text.csv', index=False)
+    tarefas.to_csv('index.js', index=False)
 
 @app.route("/list", methods=['GET'])
 def listarTarefas():
