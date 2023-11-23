@@ -12,10 +12,10 @@ except FileExistsError:
     pass
 
 def carregar_tarefas():
-    return pd.read_csv('index.js')
+    return pd.read_json('index.json')
 
 def salvar_tarefas(tarefas):
-    tarefas.to_csv('index.js', index=False)
+    tarefas.to_json('index.json', index=False)
 
 @app.route("/list", methods=['GET'])
 def listarTarefas():
